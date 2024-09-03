@@ -17,6 +17,16 @@ return new class extends Migration
             $table->string('lname');
             $table->string('email')->unique();
             $table->string('type');
+            $table->integer('telephone')->nullable();
+            $table->string('poste')->nullable();
+            $table->string('genre')->nullable();
+            $table->string('addresse')->nullable();
+            $table->string('cordonees')->nullable();
+            $table->string('ville')->nullable();
+            $table->string('etat')->nullable();
+            $table->string('site')->nullable();
+            $table->string('numero_de_tva')->nullable();
+            $table->string('statut_matrimonial')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

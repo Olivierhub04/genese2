@@ -16,12 +16,14 @@
             <x-input-error :messages="$errors->get('lname')" class="mt-2" />
         </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
+        <!-- Type -->
+        <x-input-label for="type" :value="__('Type')" />
+        <div class="flex">
+
             <div class="flex items-center mb-4">
                 <input id="type" type="radio" name="type" value="Individuel" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
                 <label for="type" class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                    Individuels
+                    Individuel
                 </label>
             </div>
 
@@ -38,6 +40,39 @@
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        </div>
+
+        <!-- Telepone -->
+        <div class="mt-4">
+            <x-input-label for="telephone" :value="__('Telephone')" />
+            <input type="tel" name="telephone" id="telephone" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full">
+            <x-input-error :messages="$errors->get('telephone')" class="mt-2" />
+        </div>
+
+        <!-- Type -->
+        <x-input-label for="genre" :value="__('Genre')" />
+        <div class="flex">
+
+            <div class="flex items-center mb-4">
+                <input id="genre" type="radio" name="genre" value="Homme" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                <label for="genre" class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                    Homme
+                </label>
+            </div>
+
+            <div class="flex items-center mb-4">
+                <input id="genre" type="radio" name="genre" value="Femme" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                <label for="genre" class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                    Femme
+                </label>
+            </div>
+
+            <div class="flex items-center mb-4">
+                <input id="genre" type="radio" name="genre" value="Autres" class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                <label for="genre" class="block ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                    Autres
+                </label>
+            </div>
         </div>
 
         <!-- Password -->

@@ -1,7 +1,9 @@
 <?php
 
 
-
+use App\Http\Controllers\FichiersController;
+use App\Http\Controllers\EtiquettesController;
+use App\Http\Controllers\TachesController;
 use App\Http\Controllers\GeneseController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -14,7 +16,7 @@ Route::get('/dashboard', function () {
 
 //Profile
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
@@ -63,8 +65,14 @@ Route::get('/professionneloutravailleursansconjoint',[GeneseController::class,'p
 Route::get('/professionneloutravailleuravecconjoint',[GeneseController::class,'professionneloutravailleuravecconjoint'])->name('professionneloutravailleuravecconjoint');
 Route::get('/gestionnaireentreprise',[GeneseController::class,'gestionnaireentreprise'])->name('gestionnaireentreprise');
 Route::get('/groupementfamilial',[GeneseController::class,'groupementfamilial'])->name('groupementfamilial');
+Route::get('/client-profile', [GeneseController::class, 'profile'])->name('client-profile');
 //End
 
 //BackEnd
-Route::post('/contact', [GeneseController::class, 'saveContact'])->name('contacts');
+Route::middleware('auth')->group(function () {
+    Route::view('/test', 'clients.test');
+    Route::resource('fichiers',FichiersController::class);
+    Route::resource('etiquettes',EtiquettesController::class);
+    Route::resource('taches',TachesController::class);
+})->prefix('clients');
 require __DIR__.'/auth.php';

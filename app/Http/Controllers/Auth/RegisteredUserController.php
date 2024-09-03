@@ -34,6 +34,15 @@ class RegisteredUserController extends Controller
             'lname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'type' => ['required', 'string', 'max:255'],
+            'telephone' => ['integer', 'max:255'],
+            'genre' => ['string', 'max:255'],
+            'addresse' => ['string', 'max:255'],
+            'cordonees' => ['string', 'max:255'],
+            'ville' => ['string', 'max:255'],
+            'etat' => ['string', 'max:255'],
+            'site' => ['string', 'max:255'],
+            'numero_de_tva' => ['string', 'max:255'],
+            'statut_matrimonial' => ['string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -42,6 +51,8 @@ class RegisteredUserController extends Controller
             'lname' => $request->lname,
             'email' => $request->email,
             'type' => $request->type,
+            'telephone' => $request->telephone,
+            'genre' => $request->genre,
             'password' => Hash::make($request->password),
         ]);
 

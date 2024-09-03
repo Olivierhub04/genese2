@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class contacts extends Model
+class dossier extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'nom',
-        'telephone',
-        'addresse',
-        'preoccupation',
-        'message',
+        'titre',
+        'prix',
+        'date_debut',
+        'fin',
+        'progression',
+        'statut'
     ];
 }
