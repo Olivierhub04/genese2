@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('taches', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('etiquettes_id')->constrained();
+            $table->foreignId('etiquettes_id')->nullable()->constrained();
             $table->string('titre')->nullable();
             $table->string('statut')->nullable();
             $table->date('date_du')->nullable();

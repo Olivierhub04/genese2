@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\taches;
 use App\Http\Requests\StoretachesRequest;
 use App\Http\Requests\UpdatetachesRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TachesController extends Controller
 {
@@ -13,7 +14,8 @@ class TachesController extends Controller
      */
     public function index()
     {
-        return view('clients.taches.index');
+        $taches = taches::all();
+        return view('clients.taches.index',['taches' => $taches]);
     }
 
     /**
@@ -21,7 +23,7 @@ class TachesController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.taches.index');
     }
 
     /**
@@ -29,7 +31,12 @@ class TachesController extends Controller
      */
     public function store(StoretachesRequest $request)
     {
-        //
+        $taches = taches::create([
+            'titre' => $request->titre,
+            'user_id' => Auth::user()->id,
+            'statut' => "en cours",
+            ]);
+        return redirect(route('clients.taches.index'));
     }
 
     /**
@@ -45,7 +52,8 @@ class TachesController extends Controller
      */
     public function edit(taches $taches)
     {
-        //
+        $taches = $taches;
+        return view('clients.taches.create',['taches' => $taches]);
     }
 
     /**

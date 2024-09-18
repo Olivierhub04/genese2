@@ -114,9 +114,9 @@
                 <li class="p-4"><a href="#"><i class="fas fa-ticket-alt"></i> <span>Tickets</span></a></li>
                 <li class="p-4"><a href="#"><i class="fas fa-bullhorn"></i> <span>Annonces</span></a></li>
                 <li class="p-4 active:bg-gray-100"><a href="{{route('fichiers.index')}}"><i class="fas fa-folder"></i><span>Fichiers</span></a></li>
-                <li class="p-4"><a href="#"><i class="fas fa-user"></i> <span>Mon profil</span></a></li>
+                <li class="p-4"><a href="{{route('profile.edit')}}"><i class="fas fa-user"></i> <span>Mon profil</span></a></li>
                 <li class="p-4"><a href="#"><i class="fas fa-book"></i> <span>Base de connaissance</span></a></li>
-                <li class="p-4"><a href="#"><i class="fas fa-tasks"></i> <span>Tâches</span></a></li>
+                <li class="p-4"><a href="{{route('taches.index')}}" class="active:bg-gray-100"><i class="fas fa-tasks"></i> <span>Tâches</span></a></li>
             </ul>
         </nav>
     </div>

@@ -65,7 +65,6 @@ Route::get('/professionneloutravailleursansconjoint',[GeneseController::class,'p
 Route::get('/professionneloutravailleuravecconjoint',[GeneseController::class,'professionneloutravailleuravecconjoint'])->name('professionneloutravailleuravecconjoint');
 Route::get('/gestionnaireentreprise',[GeneseController::class,'gestionnaireentreprise'])->name('gestionnaireentreprise');
 Route::get('/groupementfamilial',[GeneseController::class,'groupementfamilial'])->name('groupementfamilial');
-Route::get('/client-profile', [GeneseController::class, 'profile'])->name('client-profile');
 //End
 
 //BackEnd

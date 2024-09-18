@@ -39,7 +39,7 @@ class FichiersController extends Controller
             'pars' => $user,
             'fichiers' => $path,
         ]);
-        return redirect('clients.fichiers.fichiers');
+        return redirect(route('fichiers.index'));
     }
 
     /**
